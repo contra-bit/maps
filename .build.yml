@@ -1,0 +1,11 @@
+image: alpine/latest
+oauth: pages.sr.ht/PAGES:RW
+environment:
+  site: s0.srht.site
+tasks:
+- package: |
+    tar --exclude='.token' --exclude='publish.sh' --exclude='.git/*' --exclude='site.tar.gz' -C . -cvz . > site.tar.gz
+
+- upload: |
+    acurl -f https://pages.sr.ht/publish/$site -Fcontent=@site.tar.gz
+
