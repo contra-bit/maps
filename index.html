@@ -58,9 +58,10 @@
     </footer>
     <script>
       // default workadventure server
-      let waServer = 'play.workadventu.re';
+      let waServer = 'play.wa.binary-kitchen.de';
       // instance ID for this session
-      const instanceId = Math.random().toString(36).substring(2, 15);
+      //const instanceId = Math.random().toString(36).substring(2, 15);
+      const instanceId = 'global'
 
       // get location of local server
       const host = window.location.host;
@@ -71,7 +72,7 @@
       }
 
       // build instance url
-      let url = `https://${waServer}/_/${instanceId}/${host}${path}map.json`;
+      let url = `https://${waServer}/_/${instanceId}/${host}${path}main.json`;
 
       const mapLink = document.getElementById('mapLink');
       const button = document.getElementById('button');
